@@ -1,0 +1,9 @@
+@import "reset";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.Wrapper {
+  display: flex;
+  @import "sidebar";
+  @import "chatmain";
+}

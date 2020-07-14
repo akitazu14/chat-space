@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+.sideBar {
+  height: 100vh;
+  width: 300px;
+  background-color: #253141;
+}
+
+.sideBar-header {
+  height: 100px;
+  background-color: #253141;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.sideBar-main {
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+  padding: 20px;
+}
+
+.User-info {
+  height: 20px;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__name {
+    font-size: 16px;
+    font-weight: bold;
+    color:#ffffff;
+  }
+  &__icons {
+    height: 20px;
+    width: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &__edit-btn {
+      color:#ffffff;
+    }
+    &__config-btn {
+      color:#ffffff;
+      margin-left: 5px;
+    }
+  }
+}
+
+.Group {
+  width: 260px;
+  &__name {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+  &__message {
+    font-size: 11px;
+    color: #ffffff;
+    margin-bottom: 40px;
+  }
+}
