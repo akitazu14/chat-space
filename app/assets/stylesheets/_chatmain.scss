@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+.Chat-main {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  @import "modules/header";
+  @import "modules/messages";
+  @import "modules/footer";
+}

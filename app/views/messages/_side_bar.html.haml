@@ -1,1 +1,19 @@
-＜サイドバー＞
+.sideBar
+
+  .sideBar-header
+    .User-info
+      .User-info__name username
+      %a.User-info__icons(href = '#') 
+        = icon('far', 'edit', class: 'User-info__icons__edit-btn')
+        = icon('fas', 'cog', class: 'User-info__icons__config-btn')
+
+  .sideBar-main
+    .Group
+      .Group__name group1
+      .Group__message まだメッセージがありません
+    .Group
+      .Group__name group2
+      .Group__message まだメッセージがありません
+    .Group
+      .Group__name group3
+      .Group__message まだメッセージがありません

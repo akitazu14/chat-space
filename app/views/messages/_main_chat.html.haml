@@ -1,1 +1,43 @@
-＜チャット画面＞
+.Chat-main
+
+  .header
+    .Chat-group
+      .Chat-group__name group1
+      %ul.Chat-group__member-list
+        Member：
+        %li.Chat-group__member-list__name
+          user1
+        %li.Chat-group__member-list__name
+          user2
+        %li.Chat-group__member-list__name
+          user3
+    .Edit-button
+      %a.Edit-button__text(href = '#') Edit
+
+
+  .messages
+    .Mmessage
+      .Message__info
+        .Message__info__user user1
+        .Message__info__date 2019/11/20(Wed) 17:43:01
+      .Message__content おはよう！
+    .Mmessage
+      .Message__info
+        .Message__info__user user2
+        .Message__info__date 2019/11/20(Wed) 17:43:01
+      .Message__content こんにちは！
+    .Mmessage
+      .Message__info
+        .Message__info__user user3
+        .Message__info__date 2019/11/20(Wed) 17:43:01
+      .Message__content こんばんは！
+
+
+  .footer
+    .form
+      %form.Message-box
+        %input{type: "text", class: "Message-box__text", placeholder: "type a message"}
+        %label{class: "Message-box__image"}
+          = icon('far', 'image')
+          %input{type: "file", class: "Message-box__image__file"}
+      %input{type: "submit", class: "send-btn", value: "Send"}
