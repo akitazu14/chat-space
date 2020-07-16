@@ -2,10 +2,15 @@
 
   .sideBar-header
     .User-info
-      .User-info__name username
-      %a.User-info__icons(href = '#') 
-        = icon('far', 'edit', class: 'User-info__icons__edit-btn')
-        = icon('fas', 'cog', class: 'User-info__icons__config-btn')
+      .User-info__name
+        = current_user.name
+      %ul.User-info__icons
+        %li.User-info__icons__edit-btn
+        =link_to '#' do
+          = icon('far', 'edit')
+        %li.User-info__icons__config-btn
+        =link_to edit_user_path(current_user) do
+          = icon('fas', 'cog')
 
   .sideBar-main
     .Group
