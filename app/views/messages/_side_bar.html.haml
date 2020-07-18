@@ -6,19 +6,17 @@
         = current_user.name
       %ul.User-info__icons
         %li.User-info__icons__edit-btn
-        =link_to '#' do
+        =link_to new_group_path do 
           = icon('far', 'edit')
         %li.User-info__icons__config-btn
         =link_to edit_user_path(current_user) do
           = icon('fas', 'cog')
 
   .sideBar-main
-    .Group
-      .Group__name group1
-      .Group__message まだメッセージがありません
-    .Group
-      .Group__name group2
-      .Group__message まだメッセージがありません
-    .Group
-      .Group__name group3
-      .Group__message まだメッセージがありません
+    - current_user.groups.each do |group|
+      .Group
+        = link_to '#' do
+          .Group__name
+            = group.name
+          .Group__message
+            メッセージはまだありません
