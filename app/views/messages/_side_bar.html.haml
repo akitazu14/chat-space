@@ -4,19 +4,17 @@
     .User-info
       .User-info__name
         = current_user.name
-      %ul.User-info__icons
-        %li.User-info__icons__edit-btn
-        =link_to new_group_path do 
+      .User-info__icons
+        =link_to new_group_path, class: "User-info__icons__edit-btn" do
           = icon('far', 'edit')
-        %li.User-info__icons__config-btn
-        =link_to edit_user_path(current_user) do
+        =link_to edit_user_path(current_user), class: "User-info__icons__config-btn" do
           = icon('fas', 'cog')
 
   .sideBar-main
     - current_user.groups.each do |group|
       .Group
-        = link_to '#' do
-          .Group__name
-            = group.name
-          .Group__message
-            メッセージはまだありません
+      = link_to group_messages_path(group) do
+        .Group__name
+          = group.name
+        .Group__message
+          = group.show_last_message
