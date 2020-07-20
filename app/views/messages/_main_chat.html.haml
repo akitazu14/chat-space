@@ -1,43 +1,25 @@
 .Chat-main
-
   .header
     .Chat-group
-      .Chat-group__name group1
-      %ul.Chat-group__member-list
+      .Chat-group__name
+        = @group.name
+      %ul.Chat-group__member-list 
         Member：
-        %li.Chat-group__member-list__name
-          user1
-        %li.Chat-group__member-list__name
-          user2
-        %li.Chat-group__member-list__name
-          user3
+        - @group.users.each do |user|
+          %li.Chat-group__member-list__name
+            = user.name
     .Edit-button
-      %a.Edit-button__text(href = '#' ) Edit
-
+      = link_to edit_group_path(@group), class: "Edit-button__text" do
+        Edit
 
   .messages
-    .Mmessage
-      .Message__info
-        .Message__info__user user1
-        .Message__info__date 2019/11/20(Wed) 17:43:01
-      .Message__content おはよう！
-    .Mmessage
-      .Message__info
-        .Message__info__user user2
-        .Message__info__date 2019/11/20(Wed) 17:43:01
-      .Message__content こんにちは！
-    .Mmessage
-      .Message__info
-        .Message__info__user user3
-        .Message__info__date 2019/11/20(Wed) 17:43:01
-      .Message__content こんばんは！
-
+    = render partial: 'message', collection: @messages
 
   .footer
-    .form
-      %form.Message-box
-        %input{type: "text", class: "Message-box__text", placeholder: "type a message"}
-        %label{class: "Message-box__image"}
+    = form_with model: [@group, @message], html: {class: "form"}, local: true do |f|
+      .Message-box
+        = f.text_field :body, class: 'Message-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'Message-box__image' do
           = icon('far', 'image')
-          %input{type: "file", class: "Message-box__image__file"}
-      %input{type: "submit", class: "send-btn", value: "Send"}
+          = f.file_field :image, class: 'Message-box__image__file'
+      = f.submit 'Send', class: 'send-btn'
