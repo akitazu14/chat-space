@@ -51,14 +51,18 @@
 
 .Group {
   width: 260px;
-  &__name {
-    font-size: 15px;
-    color: #ffffff;
-    margin-bottom: 5px;
-  }
-  &__message {
-    font-size: 11px;
-    color: #ffffff;
-    margin-bottom: 40px;
+  &__Info {
+  text-decoration: none;
+    &__name {
+      font-size: 15px;
+      color: #ffffff;
+      margin-bottom: 5px;
+      text-decoration: none;
+    }
+    &__message {
+      font-size: 11px;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
   }
 }
